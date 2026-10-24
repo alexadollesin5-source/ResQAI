@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ResQAI | Emergency Reports</title>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+<div class="brand"><div class="logo">R</div><div><strong>ResQAI</strong><small>DISASTER RESPONSE SYSTEM</small></div></div>
+<nav class="nav">
+<div class="nav-label">Workspace</div>
+<a class="nav-link" href="index.html"><span class="ico">▦</span>Dashboard</a>
+<a aria-current="page" class="active nav-link" href="reports.html"><span class="ico">◉</span>Emergency Reports <span class="tag tag-red" style="margin-left:auto">4</span></a>
+<a class="nav-link" href="centers.html"><span class="ico">⌖</span>Evacuation Centers</a>
+<a class="nav-link" href="requests.html"><span class="ico">✚</span>Assistance Requests</a>
+<a class="nav-link" href="evacuees.html"><span class="ico">♧</span>Evacuee Records</a>
+<a class="nav-link" href="ai-analysis.html"><span class="ico">✳</span>AI Analysis</a>
+<div class="nav-label">Communication</div>
+<a class="nav-link" href="announcements.html"><span class="ico">▤</span>Announcements</a>
+</nav>
+<div class="side-bottom"><span class="online"></span>System interface preview<br/>Atimonan, Quezon · Admin access</div>
+</aside>
+<main class="main">
+<header class="topbar">
+<div style="display:flex;align-items:center;gap:14px"><button aria-label="Open menu" class="mobile-menu" id="menuToggle">☰</button><div class="crumb">ResQAI <span style="margin:0 7px;color:#b2bfcb">/</span> <b id="crumbTitle">Emergency Reports</b></div></div>
+<div class="top-actions"><span class="status-pill">● System Online</span><div class="avatar">AD</div><div class="admin-meta"><div class="admin-name">ResQAI Admin</div><div class="admin-role">Authorized Personnel</div></div></div>
+</header>
+<div class="content">
+
+
+
+
+
+
+<section class="section-page active" id="page-reports">
+<div class="page-heading"><div><div class="eyebrow">INCIDENT MANAGEMENT</div><h1>Emergency Reports</h1><p>Review submitted reports and use AI analysis as supporting information—not a final decision.</p></div><button class="btn btn-primary" onclick="toast('New reports are received through the resident-facing system.')">＋ Report intake</button></div>
+<div class="panel"><div class="panel-head"><div><h2>All submitted reports</h2><p>Sample records for the admin website prototype</p></div><span class="tag tag-red">4 require attention</span></div><div class="toolbar"><input id="reportSearch" oninput="filterRows('reportSearch','reportsTable')" placeholder="Search report or barangay..."/><select onchange="filterStatus(this,'reportsTable')"><option value="">All statuses</option><option>For review</option><option>Assigned</option><option>Reviewed</option><option>Resolved</option></select></div><div class="table-wrap"><table id="reportsTable"><thead><tr><th>Report details</th><th>Location</th><th>AI-assisted summary</th><th>Priority</th><th>Status</th><th>Action</th></tr></thead><tbody>
+<tr><td class="table-title">Flooding reported</td><td>Brgy. Ponon</td><td>Mentions flooding; verify water level</td><td><span class="tag tag-red">High</span></td><td><span class="tag tag-amber">For review</span></td><td><button class="small-action" onclick="reviewReport('Flooding reported','Brgy. Ponon','High')">Review</button></td></tr>
+<tr><td class="table-title">Family needs assistance</td><td>Brgy. Zone II</td><td>Household assistance request; verify details</td><td><span class="tag tag-red">High</span></td><td><span class="tag tag-blue">Assigned</span></td><td><button class="small-action" onclick="reviewReport('Family needs assistance','Brgy. Zone II','High')">Review</button></td></tr>
+<tr><td class="table-title">Road obstruction</td><td>Brgy. Angeles</td><td>Possible route obstruction; check road status</td><td><span class="tag tag-amber">Medium</span></td><td><span class="tag tag-amber">For review</span></td><td><button class="small-action" onclick="reviewReport('Road obstruction','Brgy. Angeles','Medium')">Review</button></td></tr>
+<tr><td class="table-title">Rising water level</td><td>Brgy. Balubad</td><td>Water level concern; confirm with responders</td><td><span class="tag tag-amber">Medium</span></td><td><span class="tag tag-green">Reviewed</span></td><td><button class="small-action" onclick="reviewReport('Rising water level','Brgy. Balubad','Medium')">Review</button></td></tr>
+<tr><td class="table-title">Power interruption</td><td>Brgy. Lumutan</td><td>Possible local service disruption</td><td><span class="tag tag-blue">Low</span></td><td><span class="tag tag-green">Resolved</span></td><td><button class="small-action" onclick="reviewReport('Power interruption','Brgy. Lumutan','Low')">View</button></td></tr>
+</tbody></table></div></div>
+</section></div>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<div class="modal-backdrop" id="modalBackdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h2 id="modalTitle">Create announcement</h2><p id="modalDescription">Share an official update with residents.</p><div id="modalFields"></div><div class="modal-foot"><button class="btn btn-light" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="submitModal()">Save</button></div></div></div>
+<script src="script.js"></script>
+</body>
+</html>

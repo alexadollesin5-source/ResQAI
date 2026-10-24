@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ResQAI | Dashboard</title>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+<div class="brand"><div class="logo">R</div><div><strong>ResQAI</strong><small>DISASTER RESPONSE SYSTEM</small></div></div>
+<nav class="nav">
+<div class="nav-label">Workspace</div>
+<a aria-current="page" class="active nav-link" href="index.html"><span class="ico">▦</span>Dashboard</a>
+<a class="nav-link" href="reports.html"><span class="ico">◉</span>Emergency Reports <span class="tag tag-red" style="margin-left:auto">4</span></a>
+<a class="nav-link" href="centers.html"><span class="ico">⌖</span>Evacuation Centers</a>
+<a class="nav-link" href="requests.html"><span class="ico">✚</span>Assistance Requests</a>
+<a class="nav-link" href="evacuees.html"><span class="ico">♧</span>Evacuee Records</a>
+<a class="nav-link" href="ai-analysis.html"><span class="ico">✳</span>AI Analysis</a>
+<div class="nav-label">Communication</div>
+<a class="nav-link" href="announcements.html"><span class="ico">▤</span>Announcements</a>
+</nav>
+<div class="side-bottom"><span class="online"></span>System interface preview<br/>Atimonan, Quezon · Admin access</div>
+</aside>
+<main class="main">
+<header class="topbar">
+<div style="display:flex;align-items:center;gap:14px"><button aria-label="Open menu" class="mobile-menu" id="menuToggle">☰</button><div class="crumb">ResQAI <span style="margin:0 7px;color:#b2bfcb">/</span> <b id="crumbTitle">Dashboard</b></div></div>
+<div class="top-actions"><span class="status-pill">● System Online</span><div class="avatar">AD</div><div class="admin-meta"><div class="admin-name">ResQAI Admin</div><div class="admin-role">Authorized Personnel</div></div></div>
+</header>
+<div class="content">
+
+
+
+
+
+
+<section class="dashboard-page active" id="page-dashboard">
+<div class="page-heading"><div><div class="eyebrow">DISASTER OPERATIONS · ATIMONAN, QUEZON</div><h1>Good day, Admin.</h1><p>Here’s your disaster response overview. Review urgent reports and keep evacuation information updated.</p></div><button class="btn btn-primary" onclick="openModal('announcement')"><span>＋</span> New announcement</button></div>
+<div class="stats">
+<div class="stat"><div class="stat-top">Emergency reports <span class="stat-icon ic-red">◉</span></div><div class="stat-number">24</div><div class="stat-foot"><strong>4 urgent</strong> need review</div></div>
+<div class="stat"><div class="stat-top">Assistance requests <span class="stat-icon ic-amber">✚</span></div><div class="stat-number">12</div><div class="stat-foot"><strong>5 in progress</strong> · 3 pending</div></div>
+<div class="stat"><div class="stat-top">Evacuation centers <span class="stat-icon ic-blue">⌖</span></div><div class="stat-number">8</div><div class="stat-foot"><strong>6 available</strong> · 2 near capacity</div></div>
+<div class="stat"><div class="stat-top">Registered evacuees <span class="stat-icon ic-teal">♧</span></div><div class="stat-number">386</div><div class="stat-foot">Across active centers</div></div>
+</div>
+<div class="layout-grid">
+<div class="panel">
+<div class="panel-head"><div><h2>Recent emergency reports</h2><p>Incoming reports for authorized personnel to review</p></div><button class="text-btn" onclick="window.location.href='reports.html'">View all →</button></div>
+<div class="table-wrap"><table><thead><tr><th>Report</th><th>Priority</th><th>Status</th><th></th></tr></thead><tbody>
+<tr><td><div class="incident"><div class="incident-mark">⚠</div><div><b>Flooding reported</b><small>Brgy. Ponon · 10:42 AM</small></div></div></td><td><span class="tag tag-red">High</span></td><td><span class="tag tag-amber">For review</span></td><td><button class="small-action" onclick="reviewReport('Flooding reported','Brgy. Ponon','High')">Review</button></td></tr>
+<tr><td><div class="incident"><div class="incident-mark" style="background:#fff5e3;color:#b87910">✚</div><div><b>Family needs assistance</b><small>Brgy. Zone II · 10:18 AM</small></div></div></td><td><span class="tag tag-red">High</span></td><td><span class="tag tag-blue">Assigned</span></td><td><button class="small-action" onclick="reviewReport('Family needs assistance','Brgy. Zone II','High')">Review</button></td></tr>
+<tr><td><div class="incident"><div class="incident-mark" style="background:#eaf2ff;color:#356dc3">⌖</div><div><b>Road obstruction</b><small>Brgy. Angeles · 9:56 AM</small></div></div></td><td><span class="tag tag-amber">Medium</span></td><td><span class="tag tag-amber">For review</span></td><td><button class="small-action" onclick="reviewReport('Road obstruction','Brgy. Angeles','Medium')">Review</button></td></tr>
+<tr><td><div class="incident"><div class="incident-mark" style="background:#e4f7f5;color:#078d85">≋</div><div><b>Rising water level</b><small>Brgy. Balubad · 9:31 AM</small></div></div></td><td><span class="tag tag-amber">Medium</span></td><td><span class="tag tag-green">Reviewed</span></td><td><button class="small-action" onclick="reviewReport('Rising water level','Brgy. Balubad','Medium')">View</button></td></tr>
+</tbody></table></div>
+</div>
+<div class="panel">
+<div class="panel-head"><div><h2>AI report analysis</h2><p>Gemini-assisted summary · Human review required</p></div><span class="tag tag-blue">AI ASSIST</span></div>
+<div class="ai-panel">
+<div class="ai-head"><div class="ai-symbol">✳</div><div><h2>Priority review queue</h2><p>Highlights from submitted reports</p></div></div>
+<div class="ai-alert"><div class="rowtop"><b>Possible flood-related risk</b><span class="confidence">High priority</span></div><p>Reports mention rising water and flooding in nearby barangays. Review locations and verify conditions with local responders.</p></div>
+<div class="ai-alert" style="background:#fffaf0;border-color:#f6e7c8"><div class="rowtop"><b>Assistance request may be urgent</b><span class="confidence" style="color:#b87910">Needs review</span></div><p>A household reports needing help. Check the submitted location and household details before assigning a response.</p></div>
+<div class="ai-note">AI output is decision support only. Confirm report details before taking action; the system does not automatically dispatch rescue teams.</div>
+<div class="ai-actions"><button class="btn btn-primary" onclick="window.location.href='ai-analysis.html'">Open full analysis →</button><button class="btn btn-light" onclick="toast('Analysis refreshed for this demo.')">↻ Refresh</button></div>
+</div>
+</div>
+</div>
+<div class="lower-grid">
+<div class="panel"><div class="panel-head"><div><h2>Evacuation center capacity</h2><p>Current sample occupancy overview</p></div><button class="text-btn" onclick="window.location.href='centers.html'">Manage →</button></div>
+<div class="center-row"><div class="center-pin">⌖</div><div class="center-info"><b>Atimonan Central Elementary School</b><small>Brgy. Zone I · 145 / 200 evacuees</small></div><div class="capacity"><div class="capacity-top"><b>73%</b><span>Capacity</span></div><div class="bar"><span style="width:73%"></span></div></div></div>
+<div class="center-row"><div class="center-pin">⌖</div><div class="center-info"><b>Atimonan National High School</b><small>Brgy. Zone III · 92 / 100 evacuees</small></div><div class="capacity"><div class="capacity-top"><b>92%</b><span>Capacity</span></div><div class="bar warn"><span style="width:92%"></span></div></div></div>
+<div class="center-row"><div class="center-pin">⌖</div><div class="center-info"><b>Barangay Hall — Ponon</b><small>Brgy. Ponon · 48 / 80 evacuees</small></div><div class="capacity"><div class="capacity-top"><b>60%</b><span>Capacity</span></div><div class="bar"><span style="width:60%"></span></div></div></div>
+</div>
+<div class="panel"><div class="panel-head"><div><h2>Response activity</h2><p>Latest administrative updates</p></div><span class="tag tag-gray">TODAY</span></div>
+<div class="activity">
+<div class="activity-item"><span class="activity-dot"></span><div><b>New report submitted</b><p>Flooding reported in Brgy. Ponon.</p><time>10:42 AM · Emergency Reports</time></div></div>
+<div class="activity-item"><span class="activity-dot" style="background:#e5a02b"></span><div><b>Assistance request assigned</b><p>Household request forwarded for personnel review.</p><time>10:25 AM · Assistance Requests</time></div></div>
+<div class="activity-item"><span class="activity-dot" style="background:#356dc3"></span><div><b>Center capacity updated</b><p>Atimonan National High School occupancy updated.</p><time>9:50 AM · Evacuation Centers</time></div></div>
+</div>
+</div>
+</div>
+</section></div>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<div class="modal-backdrop" id="modalBackdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h2 id="modalTitle">Create announcement</h2><p id="modalDescription">Share an official update with residents.</p><div id="modalFields"></div><div class="modal-foot"><button class="btn btn-light" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="submitModal()">Save</button></div></div></div>
+<script src="script.js"></script>
+</body>
+</html>

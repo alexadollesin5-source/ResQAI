@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ResQAI | Announcements</title>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+<div class="brand"><div class="logo">R</div><div><strong>ResQAI</strong><small>DISASTER RESPONSE SYSTEM</small></div></div>
+<nav class="nav">
+<div class="nav-label">Workspace</div>
+<a class="nav-link" href="index.html"><span class="ico">▦</span>Dashboard</a>
+<a class="nav-link" href="reports.html"><span class="ico">◉</span>Emergency Reports <span class="tag tag-red" style="margin-left:auto">4</span></a>
+<a class="nav-link" href="centers.html"><span class="ico">⌖</span>Evacuation Centers</a>
+<a class="nav-link" href="requests.html"><span class="ico">✚</span>Assistance Requests</a>
+<a class="nav-link" href="evacuees.html"><span class="ico">♧</span>Evacuee Records</a>
+<a class="nav-link" href="ai-analysis.html"><span class="ico">✳</span>AI Analysis</a>
+<div class="nav-label">Communication</div>
+<a aria-current="page" class="active nav-link" href="announcements.html"><span class="ico">▤</span>Announcements</a>
+</nav>
+<div class="side-bottom"><span class="online"></span>System interface preview<br/>Atimonan, Quezon · Admin access</div>
+</aside>
+<main class="main">
+<header class="topbar">
+<div style="display:flex;align-items:center;gap:14px"><button aria-label="Open menu" class="mobile-menu" id="menuToggle">☰</button><div class="crumb">ResQAI <span style="margin:0 7px;color:#b2bfcb">/</span> <b id="crumbTitle">Announcements</b></div></div>
+<div class="top-actions"><span class="status-pill">● System Online</span><div class="avatar">AD</div><div class="admin-meta"><div class="admin-name">ResQAI Admin</div><div class="admin-role">Authorized Personnel</div></div></div>
+</header>
+<div class="content">
+
+
+
+
+
+
+<section class="section-page active" id="page-announcements">
+<div class="page-heading"><div><div class="eyebrow">PUBLIC INFORMATION</div><h1>Announcements</h1><p>Publish official disaster updates and evacuation instructions for residents.</p></div><button class="btn btn-primary" onclick="openModal('announcement')">＋ New announcement</button></div>
+<div class="panel"><div class="panel-head"><div><h2>Official announcements</h2><p>Demo content — publishing is not connected to a live service</p></div></div><div id="announcementList">
+<div class="center-row"><div class="center-pin" style="background:#fff0ef;color:#c53f3f">⚠</div><div class="center-info"><b>Weather advisory: monitor local updates</b><small>All barangays · Posted today, 9:00 AM</small><p style="font-size:11px;color:var(--muted);margin:7px 0 0">Residents are advised to monitor official announcements and prepare essential items in case evacuation becomes necessary.</p></div><span class="tag tag-green">Published</span></div>
+<div class="center-row"><div class="center-pin">⌖</div><div class="center-info"><b>Check official evacuation center information</b><small>All barangays · Posted yesterday</small><p style="font-size:11px;color:var(--muted);margin:7px 0 0">Please refer to updated center availability and follow instructions from authorized local personnel.</p></div><span class="tag tag-green">Published</span></div>
+</div></div>
+</section></div>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<div class="modal-backdrop" id="modalBackdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><h2 id="modalTitle">Create announcement</h2><p id="modalDescription">Share an official update with residents.</p><div id="modalFields"></div><div class="modal-foot"><button class="btn btn-light" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="submitModal()">Save</button></div></div></div>
+<script src="script.js"></script>
+</body>
+</html>
